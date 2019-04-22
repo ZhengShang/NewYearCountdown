@@ -1,0 +1,15 @@
+<!--index.wxml-->
+<view class="container">
+  <view class='today'>
+    <text>{{today}}</text>
+  </view>
+
+  <view class='remaining'>
+    <text class='remainingText'>{{remaining}}<text class='day'>天</text></text>
+  </view>
+  <text class='reach'>{{des}}</text>
+
+  <view class="tips">
+    <text>{{tips}}</text>
+  </view>
+</view>
