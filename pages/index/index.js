@@ -22,6 +22,13 @@ Page({
 
     var remain = Math.ceil((new Date(thisYear + 1, 0, 1).getTime() - today.getTime()) / (24 * 60 * 60 * 1000))
 
+    let current = new Date()
+    let chineseNewYear = 0
+    while (!/(12月30日$)|(12\/30$)/.test(current.toLocaleDateString('ja-JP-u-ca-chinese'))) {
+      chineseNewYear++
+      current = new Date(current.valueOf() + 86400000)
+    }
+
     var tipsContent;
     if (remain <= 31) {
       tipsContent = "很快了,再苟一个月就可以过年啦😝"
@@ -33,13 +40,14 @@ Page({
       tipsContent = "只要我掰着指头数的够快\n很快就过年了...🙃"
     }
 
-    var desContent = "距离" + (thisYear + 1) + "年还有" + remain + "天.\n当这个数字降到0的时候,就可以过年啦~"
+    var desContent = "距离" + (thisYear + 1) + "年还有" + remain + "天.\n当这个数字降到0的时候,就可以过元旦啦~"
 
     this.setData({
       today: thisYear + "-" + (thisMonth + 1) + "-" + today.getDate(),
       remaining: remain,
       tips: tipsContent,
-      des: desContent
+      des: desContent,
+      chineseNewYear: chineseNewYear,
     })
   },
 
