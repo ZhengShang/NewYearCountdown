@@ -4,9 +4,16 @@
     <text>{{today}}</text>
   </view>
 
-  <view class='remaining'>
-    <text class='remainingText'>{{remaining}}<text class='day'>天</text></text>
+  <view class='flex'>
+    <view class='remaining'>
+      <text class='remainingText'><text class='desc'>元旦</text>{{remaining}}<text class='day'>天</text></text>
+    </view>
+
+    <view class='remaining'>
+      <text class='remainingText'><text class='desc'>除夕</text>{{chineseNewYear}}<text class='day'>天</text></text>
+    </view>
   </view>
+
   <text class='reach'>{{des}}</text>
 
   <view class="tips">

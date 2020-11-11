@@ -12,12 +12,19 @@
 .reach{
   color: #888;
   font-size: x-small;
-  margin-top: 60px;
+  margin-top: 50px;
 }
 
 .day{
   color: gray;
   font-size: x-small
+}
+
+.flex {
+  width: 90%;
+  display: flex;
+  justify-content: space-around;
+  margin-top: -20px;
 }
 
 .remaining {
@@ -33,6 +40,13 @@
 .remainingText {
   color: #e64300;
   font-size: 40pt
+}
+
+.desc {
+  position: absolute;
+  font-size: x-small;
+  color: #888;
+  margin-left: 5px;
 }
 
 .tips {
