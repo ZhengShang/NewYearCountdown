@@ -23,10 +23,18 @@ Page({
     var remain = Math.ceil((new Date(thisYear + 1, 0, 1).getTime() - today.getTime()) / (24 * 60 * 60 * 1000))
 
     let current = new Date()
-    let chineseNewYear = 0
-    while (!/(12月30日$)|(12\/30$)/.test(current.toLocaleDateString('ja-JP-u-ca-chinese'))) {
+    let chineseNewYear = -1
+    const MILLiSOCOND_IN_A_DAY = 86400000
+
+    const chineseNewYearValid = cur => /(年1月1日$)|(\/1\/1$)/.test(cur.toLocaleDateString('ja-JP-u-ca-chinese'))
+
+    if (chineseNewYearValid(current) && chineseNewYear === -1) {
+      current = new Date(current.valueOf() + MILLiSOCOND_IN_A_DAY)
+    }
+
+    while (!chineseNewYearValid(current)) {
       chineseNewYear++
-      current = new Date(current.valueOf() + 86400000)
+      current = new Date(current.valueOf() + MILLiSOCOND_IN_A_DAY)
     }
 
     var tipsContent;
